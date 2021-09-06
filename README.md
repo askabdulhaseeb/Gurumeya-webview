@@ -1,16 +1,5 @@
-# gurumeya_webview
+# Gurumeya
+<img width="487" alt="Screenshot 2021-09-07 at 1 45 39 AM" src="https://user-images.githubusercontent.com/62133331/132259692-2f005674-44c1-4a98-8d08-efb1fa40984a.png">
+<img width="487" alt="Screenshot 2021-09-06 at 12 23 36 AM" src="https://user-images.githubusercontent.com/62133331/132259703-63fecc55-a317-4966-9d09-edcf6ca53476.png">
+<img width="487" alt="Screenshot 2021-09-06 at 12 23 55 AM" src="https://user-images.githubusercontent.com/62133331/132259706-0b66810f-60e2-4281-bccb-a10b2ea6eee3.png">
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

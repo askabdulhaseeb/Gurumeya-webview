@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:gurumeya_webview/configs/configs.dart';
@@ -15,6 +18,33 @@ class _LandingPageState extends State<LandingPage> {
   final urlController = TextEditingController();
   final GlobalKey _webViewKey = GlobalKey();
   InAppWebViewController? _webViewController;
+
+  @override
+  void initState() {
+    super.initState();
+    Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult connresult) {
+      if (connresult == ConnectivityResult.none) {
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          InternetIssueScreen.routeName,
+          (route) => false,
+        );
+      }
+    });
+    pullToRefreshController = PullToRefreshController(
+      options: PullToRefreshOptions(color: Colors.blue),
+      onRefresh: () async {
+        if (Platform.isAndroid) {
+          _webViewController?.reload();
+        } else if (Platform.isIOS) {
+          _webViewController?.loadUrl(
+              urlRequest: URLRequest(url: await _webViewController?.getUrl()));
+        }
+      },
+    );
+  }
 
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
     crossPlatform: InAppWebViewOptions(

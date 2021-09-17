@@ -22,6 +22,17 @@ class _LandingPageState extends State<LandingPage> {
   @override
   void initState() {
     super.initState();
+    Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult connresult) {
+      if (connresult == ConnectivityResult.none) {
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          InternetIssueScreen.routeName,
+          (route) => false,
+        );
+      }
+    });
     pullToRefreshController = PullToRefreshController(
       options: PullToRefreshOptions(color: Colors.blue),
       onRefresh: () async {
